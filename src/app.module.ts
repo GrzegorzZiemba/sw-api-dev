@@ -7,6 +7,8 @@ import { AppService } from './app.service';
 import { FilmsModule } from './films/films.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FilmCache } from './films/film-cache.entity'; 
+import { SpeciesModule } from './species/species.module';
+import { SpeciesCache } from './species/species-cache.entity';
 
 @Module({
   imports: [
@@ -18,9 +20,10 @@ import { FilmCache } from './films/film-cache.entity';
     TypeOrmModule.forRoot({
       type: 'sqlite', 
       database: 'sqllite.db', 
-      entities: [FilmCache], 
+      entities: [FilmCache, SpeciesCache], 
       synchronize: true, 
     }),
+    SpeciesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
