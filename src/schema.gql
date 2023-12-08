@@ -8,7 +8,14 @@ type Film {
   openingCrawl: String!
 }
 
+type Planet {
+  name: String!
+  climate: String!
+  terrain: String!
+}
+
 type Query {
   film(id: Int!): Film!
   films(page: Int, title: String): [Film!]!
+  planets(page: Int): [Planet!]!
 }
