@@ -9,6 +9,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { FilmCache } from './films/film-cache.entity'; 
 import { SpeciesModule } from './species/species.module';
 import { SpeciesCache } from './species/species-cache.entity';
+import { VehiclesModule } from './vehicles/vehicles.module';
+import { VehiclesCache } from './vehicles/vehicles-cache.entity';
 
 @Module({
   imports: [
@@ -20,10 +22,11 @@ import { SpeciesCache } from './species/species-cache.entity';
     TypeOrmModule.forRoot({
       type: 'sqlite', 
       database: 'sqllite.db', 
-      entities: [FilmCache, SpeciesCache], 
+      entities: [FilmCache, SpeciesCache, VehiclesCache], 
       synchronize: true, 
     }),
     SpeciesModule,
+    VehiclesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
