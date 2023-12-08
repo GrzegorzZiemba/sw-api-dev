@@ -11,6 +11,8 @@ import { SpeciesModule } from './species/species.module';
 import { SpeciesCache } from './species/species-cache.entity';
 import { VehiclesModule } from './vehicles/vehicles.module';
 import { VehiclesCache } from './vehicles/vehicles-cache.entity';
+import { StarshipsModule } from './starships/starships.module';
+import { StarshipCache } from './starships/starship-cache.entity';
 
 @Module({
   imports: [
@@ -22,11 +24,12 @@ import { VehiclesCache } from './vehicles/vehicles-cache.entity';
     TypeOrmModule.forRoot({
       type: 'sqlite', 
       database: 'sqllite.db', 
-      entities: [FilmCache, SpeciesCache, VehiclesCache], 
+      entities: [FilmCache, SpeciesCache, VehiclesCache, StarshipCache], 
       synchronize: true, 
     }),
     SpeciesModule,
     VehiclesModule,
+    StarshipsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
