@@ -1,73 +1,46 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Star Wars API Wrapper
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## About
+This project is a Node.js API built with NestJS, which serves as a wrapper around the [Star Wars API (SWAPI)](https://swapi.dev). It provides endpoints for fetching films, species, vehicles, starships, and planets from the Star Wars universe. The application caches API responses for 24 hours and offers pagination and filtering capabilities.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Features
+- **Caching:** Every resource fetched from SWAPI is cached for 24 hours.
+- **Pagination:** API responses are paginated for easier data management.
+- **Filtering:** Endpoints offer filtering capabilities for specific fields.
+- **Data Analysis:** Analyze text data from film openings and find the most frequent characters.
 
-## Description
+## Prerequisites
+To run this project, you will need Docker and Docker Compose installed on your machine.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Getting Started
 
-## Installation
+### Setting Up and Running the Application
+1. **Clone the Repository:**
+git clone https://github.com/[your-username]/[your-repo-name].git
+cd [your-repo-name]
 
-```bash
-$ npm install
-```
+2. **Build and Run with Docker Compose:**
+docker-compose up --build
 
-## Running the app
 
-```bash
-# development
-$ npm run start
+This command builds the Docker image for the application and starts the containers defined in the `docker-compose.yml` file.
 
-# watch mode
-$ npm run start:dev
+3. **Access the Application:**
+Once the application is running, you can access it at `http://localhost:3000`.
 
-# production mode
-$ npm run start:prod
-```
+### Using the API
+- Access the GraphQL playground at `http://localhost:3000/graphql`.
+- Use REST endpoints:
+- `/films` for films data.
+- `/species` for species data.
+- `/vehicles` for vehicles data.
+- `/starships` for starships data.
+- `/planets` for planets data.
 
-## Test
+### Running Tests
+Run the following command to execute the automated tests:
+docker-compose exec app npm test
 
-```bash
-# unit tests
-$ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+## Documentation
+For detailed API documentation, visit the Swagger UI at `http://localhost:3000/api`.
